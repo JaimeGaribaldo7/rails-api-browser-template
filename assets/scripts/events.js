@@ -38,6 +38,37 @@ const onSignOut = function (event) {
   .fail(ui.failure);
 };
 
+// DEX FUNCTIONS
+
+const onGetPokedex = () => {
+  event.preventDefault();
+  api.getDex()
+  .done(ui.getDexSuccess)
+  .fail(ui.failure);
+};
+
+const onShowTeams = () => {
+  event.preventDefault();
+  api.showTeams()
+  .done(ui.showTeamsSuccess)
+  .fail(ui.failure);
+};
+
+const onAddPokemon = () => {
+  event.preventDefault();
+  api.addPokemon()
+  .done(ui.addPokemonSuccess)
+  .fail(ui.failure);
+};
+
+const onUpdateNicknames = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.updateNicknames(data)
+  .done(ui.updateNicknamesSuccess)
+  .fail(ui.failure);
+};
+
 const addHandlers = () => {
 
   // FORMS PORTION STARTS HERE
@@ -45,6 +76,10 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
+  $('#get-dex').on('click', onGetPokedex);
+  $('#view-teams').on('click', onShowTeams);
+  $('#change-nicknames').on('submit', onUpdateNicknames);
+  $('#add-pokemon').on('click', onAddPokemon);
 };
 
 module.exports = {

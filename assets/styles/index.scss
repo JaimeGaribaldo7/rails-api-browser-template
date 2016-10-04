@@ -1,2 +1,36 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$lightblue: #f0f8ff;
+$sky: #87ceeb;
+$purblue: #6a5acd;
+$redish: #b22222;
+$whiteish: #f8f8ff;
+$blueish: #1e90ff;
+$goldish: #ffd700;
+
+
+.container-fluid {
+  background-color: $lightblue;
+  padding: 10px;
+}
+
+.button {
+  background-color: lighten($whiteish, 50%);
+  border-color: lighten($redish, 5%);
+  border-radius: 15px;
+  color: darken($redish, 10%);
+  font-weight: bold;
+}
+
+.app-name {
+  background-color: lighten($goldish, 43%);
+  border-radius: 15px;
+  color: lighten($blueish, 5%);
+  font-family: 'Rockwell Extra Bold';
+  font-size: 40px;
+  font-weight: bolder;
+  height: 60px;
+  text-align: center;
+  width: 220px;
+}

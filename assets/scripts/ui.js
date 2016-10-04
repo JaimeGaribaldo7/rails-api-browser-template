@@ -23,6 +23,24 @@ const signOutSuccess = () => {
   app.user = null;
 };
 
+const getDexSuccess = (data) => {
+  console.log("GETTING DEX HERE");
+  console.log("THIS IS ALL DEX DATA ****", data);
+};
+
+const showTeamsSuccess = (data) => {
+  console.log("GETTING TEAMS HERE");
+  console.log("THIS IS TEAMS DATA>>", data);
+};
+
+const updateNicknamesSuccess = (data) => {
+  console.log("GETTING NICKNAME DATA HERE");
+  console.log("THIS IS the DATA>>", data);
+};
+
+const addPokemonSuccess = (data) => {
+  console.log("Here's an added Pokemon????", data);
+};
 
 module.exports = {
   failure,
@@ -30,4 +48,8 @@ module.exports = {
   signInSuccess,
   changePasswordSuccess,
   signOutSuccess,
+  getDexSuccess,
+  showTeamsSuccess,
+  updateNicknamesSuccess,
+  addPokemonSuccess
 };

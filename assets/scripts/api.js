@@ -13,6 +13,7 @@ const signUp = (data) => {
 let user;
 let host;
 const signIn = (data) => {
+  console.log(data);
   return $.ajax({
     url: app.host + '/sign-in',
     method: 'POST',
@@ -45,10 +46,60 @@ const signOut = () => {
   });
 };
 
+const getDex = (data) => {
+  return $.ajax({
+    url: app.host + '/poke-pc/' + app.user.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+  });
+};
+
+const showTeams = (data) => {
+  console.log('this is the data from show teams');
+  return $.ajax({
+    url: app.host + '/teams/' + app.user.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+  });
+};
+
+//NOTE NOTE NOTE  NOT working
+const updateNicknames = (data) => {
+  console.log('this is the data from Nicknames');
+  return $.ajax({
+    url: app.host + '/teams/' + app.user.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+  });
+};
+
+//NOTE NOTE NOTE  NOT working
+
+const addPokemon = (data) => {
+  console.log(data);
+  return $.ajax({
+    url: app.host + '/teams/' + app.user.id,
+    method: 'POST',
+    data: data,
+  });
+};
 
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  getDex,
+  showTeams,
+  updateNicknames,
+  addPokemon
 };
