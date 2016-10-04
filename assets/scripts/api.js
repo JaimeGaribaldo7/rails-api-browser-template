@@ -45,7 +45,7 @@ const signOut = () => {
     },
   });
 };
-
+//
 const getDex = (data) => {
   return $.ajax({
     url: app.host + '/poke-pc/' + app.user.id,
@@ -89,6 +89,9 @@ const addPokemon = (data) => {
   return $.ajax({
     url: app.host + '/teams/' + app.user.id,
     method: 'POST',
+    // headers: {
+    //   Authorization: 'Token token=' + app.user.token,
+    // },
     data: data,
   });
 };
