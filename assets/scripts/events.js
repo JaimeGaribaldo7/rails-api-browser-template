@@ -54,10 +54,11 @@ const onShowTeams = () => {
   .fail(ui.failure);
 };
 
-const onAddPokemon = () => {
+const onAddPokemonToTeam = (event) => {
   event.preventDefault();
-  api.addPokemon()
-  .done(ui.addPokemonSuccess)
+  let data = getFormFields(event.target);
+  api.addPokemonToTeam(data)
+  .done(ui.addPokemonToTeamSuccess)
   .fail(ui.failure);
 };
 
@@ -79,7 +80,7 @@ const addHandlers = () => {
   $('#get-dex').on('click', onGetPokedex);
   $('#view-teams').on('click', onShowTeams);
   $('#change-nicknames').on('submit', onUpdateNicknames);
-  $('#add-pokemon').on('click', onAddPokemon);
+  $('#add-pokemon').on('click', onAddPokemonToTeam);
 };
 
 module.exports = {

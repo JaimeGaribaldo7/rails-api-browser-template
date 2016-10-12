@@ -38,7 +38,7 @@ const updateNicknamesSuccess = (data) => {
   console.log("THIS IS the DATA>>", data);
 };
 
-const addPokemonSuccess = (data) => {
+const addPokemonToTeamSuccess = (data) => {
   console.log("Here's an added Pokemon????", data);
 };
 
@@ -51,5 +51,5 @@ module.exports = {
   getDexSuccess,
   showTeamsSuccess,
   updateNicknamesSuccess,
-  addPokemonSuccess
+  addPokemonToTeamSuccess
 };

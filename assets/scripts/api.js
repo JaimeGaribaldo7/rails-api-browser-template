@@ -60,7 +60,7 @@ const getDex = (data) => {
 const showTeams = (data) => {
   console.log('this is the data from show teams');
   return $.ajax({
-    url: app.host + '/teams/' + app.user.id,
+    url: app.host + '/draftings',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -71,9 +71,9 @@ const showTeams = (data) => {
 
 //NOTE NOTE NOTE  NOT working
 const updateNicknames = (data) => {
-  console.log('this is the data from Nicknames');
+  console.log();
   return $.ajax({
-    url: app.host + '/teams/' + app.user.id,
+    url: app.host + '/draftings/' /*+ some id maybe Depending on html..id */,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -84,15 +84,20 @@ const updateNicknames = (data) => {
 
 //NOTE NOTE NOTE  NOT working
 
-const addPokemon = (data) => {
+const addPokemonToTeam = (data) => {
   console.log(data);
   return $.ajax({
-    url: app.host + '/teams/' + app.user.id,
+    url: app.host + '/draftings/',
     method: 'POST',
-    // headers: {
-    //   Authorization: 'Token token=' + app.user.token,
-    // },
-    data: data,
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data:   { "pokemon": {
+        "number": "1",
+        "name": "bulbasaur",
+        "pokemontype": "grass/poison"
+      }
+    },
   });
 };
 
@@ -104,5 +109,5 @@ module.exports = {
   getDex,
   showTeams,
   updateNicknames,
-  addPokemon
+  addPokemonToTeam
 };
